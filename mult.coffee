@@ -21,12 +21,12 @@ class Operation
     "#{@operande} x #{@table}"
 
 class Exercice
-  constructor: (@maxOperation, @range) ->
-    @count = @maxOperation
+  constructor: (@maxOperation, @range) ->    
     possibleOperations = @range.operandes.length * @range.tables.length 
     if possibleOperations < @maxOperation
-      @count = possibleOperations
       console.log "je réduis le nombre d'opération de #{@maxOperation} à #{possibleOperations}"
+      @maxOperation = possibleOperations
+    @count = @maxOperation
     @points = 0
     @operations = []
     @errors = []
