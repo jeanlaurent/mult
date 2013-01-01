@@ -105,6 +105,6 @@ class Exercice
       else 
         @end()
 
-new Exercice(27, new Range [6,7,8], [2,3,4,5,6,7,8,9]).run()
+new Exercice(48, new Range [4,5,6,7,8,9], [2,3,4,5,6,7,8,9]).run()
 
 
