@@ -18,6 +18,8 @@ class Range
     return @operandes[@random(0, @operandes.length)]
   randomTable : ->
     return @tables[@random(0, @tables.length)]
+  possibleOperations : ->
+    return @operandes.length * @tables.length
 
 class Operation
   constructor: (@range) ->
@@ -30,10 +32,11 @@ class Operation
 
 class Exercice
   constructor: (@maxOperation, @range) ->    
-    possibleOperations = @range.operandes.length * @range.tables.length 
-    if possibleOperations < @maxOperation
+    possibleOps = @range.possibleOperations()
+    #console.log "Nombre d'opération maximum : #{possibleOps}" 
+    if possibleOps < @maxOperation
       console.log "je réduis le nombre d'opération de #{@maxOperation} à #{possibleOperations}"
-      @maxOperation = possibleOperations
+      @maxOperation = possibleOps
     @count = @maxOperation
     @points = 0
     @operations = []
@@ -54,8 +57,16 @@ class Exercice
       console.log 'Il faut encore que tu révises les multiplications suivantes'
       for operation in @errors
         console.log "    #{operation} = #{operation.result()}"
+    if (@maxOperation is @range.possibleOperations())
+      console.log "Je t'ai posé toutes les opérations possibles."
+    else
+      console.log "Je t'ai posé #{@maxOperation} sur les #{@range.possibleOperations()} possibles."
     console.log "================================"
     console.log cow
+
+# possibleOperations = 100% = 32
+# 32/100*27
+# maxOperation = 27
 
   run : ->
     operation = new Operation(@range)
