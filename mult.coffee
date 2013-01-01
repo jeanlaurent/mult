@@ -2,6 +2,14 @@
 
 prompt = require('prompt')
 
+cow = """
+         (__)
+         (oo)
+  /-------\\/
+ / |     ||
+* ||----||
+   ~~    ~~
+"""
 class Range
   constructor: (@operandes, @tables) ->
   random: (min,max) ->
@@ -47,6 +55,7 @@ class Exercice
       for operation in @errors
         console.log "    #{operation} = #{operation.result()}"
     console.log "================================"
+    console.log cow
 
   run : ->
     operation = new Operation(@range)
