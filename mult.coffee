@@ -10,6 +10,11 @@ cow = """
 * ||----||
    ~~    ~~
 """
+
+prompt.message = ''
+prompt.delimiter = ''
+prompt.colors = false
+
 class Range
   constructor: (@operandes, @tables) ->
   random: (min,max) ->
@@ -41,6 +46,12 @@ class Exercice
     @points = 0
     @operations = []
     @errors = []
+    @properties =
+      name: 'reponse'
+      pattern: '^[0-9]+$'
+      required: true
+      description : '>> '
+      message : 'Cette réponse ne peut pas convenir, ré-essaye'
 
   onErr : (err) ->
       console.log(err)
@@ -77,7 +88,7 @@ class Exercice
     console.log "================================"
     console.log "Combien fait : #{operation} ?"
     prompt.start()
-    prompt.get ['reponse'], (err, result) =>
+    prompt.get @properties, (err, result) =>
       if (err) 
         return @onErr(err)
       if operation.result() == +result.reponse
