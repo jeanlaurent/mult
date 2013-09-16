@@ -3,9 +3,9 @@
 prompt = require('prompt')
 
 cow = """
-         (__)
-         (oo)
-  /-------\\/
+         (__)  | Meuhhhhh |
+         (oo) /
+  /-------\\/ 
  / |     ||
 * ||----||
    ~~    ~~
@@ -40,7 +40,7 @@ class Exercice
     possibleOps = @range.possibleOperations()
     #console.log "Nombre d'opération maximum : #{possibleOps}" 
     if possibleOps < @maxOperation
-      console.log "je réduis le nombre d'opération de #{@maxOperation} à #{possibleOperations}"
+      console.log "Je vais de poser #{@range.possibleOperations()} opérations."
       @maxOperation = possibleOps
     @count = @maxOperation
     @points = 0
@@ -57,14 +57,12 @@ class Exercice
       console.log(err)
       return 1
 
-  hasErrors : ->
-    @errors.length > 0
-
   end : ->
     console.log ""
     console.log "================================"
     console.log "Ta note : #{@points}/#{@maxOperation}"
-    if (@hasErrors)
+    if @errors.length > 0
+      console.log @errors.length
       console.log 'Il faut encore que tu révises les multiplications suivantes'
       for operation in @errors
         console.log "    #{operation} = #{operation.result()}"
@@ -105,6 +103,6 @@ class Exercice
       else 
         @end()
 
-new Exercice(48, new Range [4,5,6,7,8,9], [2,3,4,5,6,7,8,9]).run()
-
+# new Exercice(48, new Range [4,5,6,7,8,9], [2,3,4,5,6,7,8,9]).run()
+new Exercice(48, new Range [7], [2,3,4,5,6,7,8,9]).run()
 
