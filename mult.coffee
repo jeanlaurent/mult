@@ -40,7 +40,7 @@ class Exercice
     possibleOps = @range.possibleOperations()
     #console.log "Nombre d'opération maximum : #{possibleOps}" 
     if possibleOps < @maxOperation
-      console.log "Je vais de poser #{@range.possibleOperations()} opérations."
+      console.log "Je vais te poser #{@range.possibleOperations()} opérations."
       @maxOperation = possibleOps
     @count = @maxOperation
     @points = 0
@@ -104,5 +104,5 @@ class Exercice
         @end()
 
 # new Exercice(48, new Range [4,5,6,7,8,9], [2,3,4,5,6,7,8,9]).run()
-new Exercice(48, new Range [7], [2,3,4,5,6,7,8,9]).run()
+new Exercice(48, new Range [3,4,5,6,7,9,9], [2,3,4,5,6,7,8,9]).run()
 
