@@ -1,0 +1,25 @@
+{
+  "name": "mult",
+  "version": "1.0.0",
+  "description": "Propose les tables de multiplications",
+  "main": "mult.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeanlaurent/mult.git"
+  },
+  "keywords": [
+    "multiplication"
+  ],
+  "author": "Jean-Laurent de Morlhon",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jeanlaurent/mult/issues"
+  },
+  "homepage": "https://github.com/jeanlaurent/mult",
+  "dependencies": {
+    "prompt": "~0.2.12"
+  }
+}
