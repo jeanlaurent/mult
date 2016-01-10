@@ -6,3 +6,8 @@ this needs node.
 * Edit last line of mult.coffee and decide number of operands and table
 * Runs ./start.sh
 * put your kids in front of the computer
+
+
+## With Docker
+
+`docker run -ti jeanlaurent/mult`
