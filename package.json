@@ -4,6 +4,7 @@
   "description": "Propose les tables de multiplications",
   "main": "mult.coffee",
   "scripts": {
+    "start": "node_modules/coffee-script/bin/coffee mult.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
