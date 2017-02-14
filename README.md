@@ -38,16 +38,13 @@ Je t'ai posé toutes les opérations possibles.
   ~~    ~~
 ```
 
-## run with Docker
+## Run with Docker
 Install [Docker](https://www.docker.com/products/overview#/install_the_platform)
 
 `docker run -ti jeanlaurent/mult`
 
-## run by hand
-
+## Run by hand
 Install [node.js](https://nodejs.org/en/download/)
 
-* get dependencies with `npm install`
-* Edit last line of mult.coffee and decide number of operands and table
-* Runs `npm start`
-* put your kids in front of the computer
+* Get dependencies once with `npm install`
+* Run mult by issuing `npm start`
