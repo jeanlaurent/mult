@@ -62,9 +62,9 @@ class Exercice
   end : ->
     console.log ""
     console.log "================================"
-    console.log "Ta note : #{@points}/#{@maxOperation}"
+    console.log "Score : #{@points}/#{@maxOperation}"
     if @errors.length > 0
-      console.log "Tu as fais #{@errors.length}"
+      console.log "Tu as juste #{@errors.length} erreurs"
       console.log 'Il faut encore que tu révises les multiplications suivantes'
       for operation in @errors
         console.log "    #{operation} = #{operation.result()}"
