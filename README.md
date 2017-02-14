@@ -39,15 +39,13 @@ Je t'ai posé toutes les opérations possibles.
 ```
 
 ## run with Docker
-[get Docker](https://www.docker.com/products/overview#/install_the_platform)
-
-then
+Install [Docker](https://www.docker.com/products/overview#/install_the_platform)
 
 `docker run -ti jeanlaurent/mult`
 
 ## run by hand
 
-You need [node.js](https://nodejs.org/en/download/)
+Install [node.js](https://nodejs.org/en/download/)
 
 * get dependencies with `npm install`
 * Edit last line of mult.coffee and decide number of operands and table
