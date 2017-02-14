@@ -1,7 +1,6 @@
 FROM node:7.5-alpine
 LABEL maintainer jeanlaurent@morlhon.net
 
-RUN mkdir /mult
 WORKDIR /mult
 
 COPY package.json /mult
