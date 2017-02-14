@@ -38,10 +38,12 @@ class Operation
 class Exercice
   constructor: (@maxOperation, @range) ->
     possibleOps = @range.possibleOperations()
-    #console.log "Nombre d'opération maximum : #{possibleOps}"
+    console.log "Tables #{@range.tables}"
+    console.log "Operandes #{@range.operandes}"
     if possibleOps < @maxOperation
       console.log "Je vais te poser #{@range.possibleOperations()} opérations."
       @maxOperation = possibleOps
+    console.log "Nombre d'opération maximum : #{possibleOps}"
     @count = @maxOperation
     @points = 0
     @operations = []
