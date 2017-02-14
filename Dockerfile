@@ -1,6 +1,6 @@
-FROM node:argon
+FROM node:7.5-alpine
 
-RUN mkdir -p /mult
+run mkdir /mult
 WORKDIR /mult
 
 COPY package.json /mult
@@ -8,4 +8,5 @@ RUN npm install
 
 COPY . /mult
 
-CMD "./start.sh"
+# calling npm start here generates a bunch of header lines
+CMD [ "./start.sh" ]

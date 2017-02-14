@@ -5,7 +5,7 @@ prompt = require('prompt')
 cow = """
          (__)  | Meuhhhhh |
          (oo) /
-  /-------\\/ 
+  /-------\\/
  / |     ||
 * ||----||
    ~~    ~~
@@ -36,9 +36,9 @@ class Operation
     "#{@operande} x #{@table}"
 
 class Exercice
-  constructor: (@maxOperation, @range) ->    
+  constructor: (@maxOperation, @range) ->
     possibleOps = @range.possibleOperations()
-    #console.log "Nombre d'opération maximum : #{possibleOps}" 
+    #console.log "Nombre d'opération maximum : #{possibleOps}"
     if possibleOps < @maxOperation
       console.log "Je vais te poser #{@range.possibleOperations()} opérations."
       @maxOperation = possibleOps
@@ -62,7 +62,7 @@ class Exercice
     console.log "================================"
     console.log "Ta note : #{@points}/#{@maxOperation}"
     if @errors.length > 0
-      console.log @errors.length
+      console.log "Tu as fais #{@errors.length}"
       console.log 'Il faut encore que tu révises les multiplications suivantes'
       for operation in @errors
         console.log "    #{operation} = #{operation.result()}"
@@ -72,10 +72,6 @@ class Exercice
       console.log "Je t'ai posé #{@maxOperation} sur les #{@range.possibleOperations()} possibles."
     console.log "================================"
     console.log cow
-
-# possibleOperations = 100% = 32
-# 32/100*27
-# maxOperation = 27
 
   run : ->
     operation = new Operation(@range)
@@ -87,7 +83,7 @@ class Exercice
     console.log "Combien fait : #{operation} ?"
     prompt.start()
     prompt.get @properties, (err, result) =>
-      if (err) 
+      if (err)
         return @onErr(err)
       if operation.result() == +result.reponse
         console.log 'BRAVO !'
@@ -100,9 +96,7 @@ class Exercice
       console.log "================================"
       if (--@count > 0)
         @run()
-      else 
+      else
         @end()
 
-# new Exercice(48, new Range [4,5,6,7,8,9], [2,3,4,5,6,7,8,9]).run()
-new Exercice(48, new Range [3,4,5,6,7,9,9], [2,3,4,5,6,7,8,9]).run()
-
+new Exercice(48, new Range [3,4,5,6,7,9], [2,3,4,5,6,7,8,9]).run()
