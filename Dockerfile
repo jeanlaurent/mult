@@ -1,4 +1,4 @@
-FROM node:7.5-alpine
+FROM node:9.5-alpine
 LABEL maintainer jeanlaurent@morlhon.net
 
 WORKDIR /mult
